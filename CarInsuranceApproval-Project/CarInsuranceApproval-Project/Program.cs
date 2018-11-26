@@ -5,12 +5,13 @@ class Program
     static void Main()
     {
         Console.WriteLine("Do you qualify?");
+        Console.WriteLine("*****************************************************");
         //What is your age ?
-        Console.WriteLine("What is your age ?");
+        Console.WriteLine("What is your age?");
         string applicantAge = Console.ReadLine();
         Console.WriteLine("*****************************************************");
         //Have you ever had a DUI?
-        Console.WriteLine("Have you ever had a DUI?");
+        Console.WriteLine("Have you ever had a DUI? Please type 'Yes or No'");
         string DUIs = Console.ReadLine();
         string wrongAnswer = "Yes";
         bool applicantDUIs = DUIs == wrongAnswer;
