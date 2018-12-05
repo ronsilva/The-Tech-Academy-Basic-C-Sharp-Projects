@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Program
 {
@@ -33,9 +34,9 @@ class Program
         Console.Clear();
         //2.Create an infinite loop.
         while (7 > 6)
-            {
-                Console.WriteLine("I'm going to go on forever");
-                break; // <-- 3.Fix the infinite loop so it will execute.
+        {
+            Console.WriteLine("I'm going to go on forever");
+            break; // <-- 3.Fix the infinite loop so it will execute.
         }
         Console.WriteLine("Or maybe not... Moving on. Please press enter *****************");
         Console.ReadLine();
@@ -60,7 +61,7 @@ class Program
         Console.WriteLine("Now time to do your thang! ... No not that! Just press enter *****************");
         Console.ReadLine();
         Console.Clear();
-        
+
         //6.0 Create a List of strings where each item in the list is unique.
         List<string> uniqueList = new List<string>();
         uniqueList.Add("White Peacocks");
@@ -88,31 +89,7 @@ class Program
         uniqueList.Add("The Flying Gurnards");
         uniqueList.Add("Albino Humpback Whale");
 
-        //Console.WriteLine("I did someting you just can't see it.");
-        //Console.WriteLine("Now do the thing **************************");
-        //Console.ReadLine();
         //6.1 Ask the user to select text to search for in the List.
-        Console.WriteLine("See this link: \n24 Rarest of Rare Awesome Things Found on Earth Ever");
-        Console.WriteLine("http://www.emlii.com/5c268a40/24-Rarest-of-Rare-Awesome-Things-Found-on-Earth-Ever \n");
-        Console.WriteLine("Select any of this unique things from this list and type it in or just copy and paste. \n" +
-            "(Ignore any part past a coma, parenthesis or colon)");
-        string itemEntered = Console.ReadLine();
-        //6.2 Create a loop that iterates through the list and then displays the index of the array that contains matching text on the screen.
-        
-        // This prodduces the outcome...
-        Console.WriteLine("You entered: " + itemEntered + " and the index position of that is: " + uniqueList.IndexOf(itemEntered));
-        // of this step in the exercise.
-        
-        Console.WriteLine("Get ready for some deja vu ********** Press Enter!");
-        Console.ReadLine();
-        Console.Clear();
-
-        //This is the long-ass way of doing the same as above:
-        Console.WriteLine("*********************************************************\n" +
-                          "******************This is not a glitch*******************\n" +
-                          "*********************************************************");
-
-        // Here I have the computer iterate through the list with a loop I made and print the index position based on a counter instead of asking for the IndexOf like above.
         Console.WriteLine("See this link: \n24 Rarest of Rare Awesome Things Found on Earth Ever");
         Console.WriteLine("http://www.emlii.com/5c268a40/24-Rarest-of-Rare-Awesome-Things-Found-on-Earth-Ever \n");
         Console.WriteLine("Select any of this unique things from this list and type it in or just copy and paste. \n" +
@@ -132,7 +109,7 @@ class Program
                 Console.WriteLine("You entered: " + itemEnteredAgain + " and the index position of that is: " + counter);
                 break;
             }
-            
+
         }
         Console.WriteLine("Okay now moving on **************************");
         Console.ReadLine();
@@ -142,16 +119,17 @@ class Program
 
         //9.0 Create a List of strings that has at least two identical strings in the List. 
         List<string> animals = new List<string>() { "dog", "cat", "horse", "squid", "fish", "donkey", "squid", "cat", "horse", "cat" };
-        
+
         //9.1 Ask the user to select text to search for in the List.
         Console.WriteLine("Let's pick an animal. for example: enter \"dog\" or \"cat\" to see if it's in the list.");
-        
-        //9.2 Create a loop that iterates through the list and 
+
+        //9.2 Create a loop that iterates through the list and Then displays the indices of the array that contain matching text on the screen.
+        //10. Add code to that above loop that tells a user if they put in text that isn’t in the List.
         string animalSelected = Console.ReadLine();
         int w = 0;
         for (int counter = 0; counter < animals.Count; counter++)
         {
-            if (animalSelected != animals[counter] && counter == animals.Count - 1 &&  w == 0)
+            if (animalSelected != animals[counter] && counter == animals.Count - 1 && w == 0)
             {
                 Console.WriteLine("That's not on the list. Try again:");
                 animalSelected = Console.ReadLine();
@@ -163,30 +141,34 @@ class Program
                 w = 1;
             }
         }
-        //9.3 Then displays the indices of the array that contain matching text on the screen. DONE
-        //10.Add code to that above loop that tells a user if they put in text that isn’t in the List. DONE
-        Console.WriteLine("Well that was fun... One last thing before you go...");
+        Console.WriteLine("Well that was fun... One last thing before you go.  Hit Enter:");
         Console.ReadLine();
         Console.Clear();
         //11.0 Create a List of strings that has at least two identical strings in the List.
-        List<string> names = new List<string>() { "Ron", "Bill", "Jack", "Donna", "Peter", "Nancy", "Johnny", "Ted", "Mike", "Heidi", "Luca", "Isabella", "Ron", "Bill", "Jack", "Donna", "Peter", "Nancy" };
+        List<string> names = new List<string>() { "Ron", "Bill", "Jack", "David", "Derick", "Donna", "Fiona", "Peter", "Nancy", "Johnny", "Nancy", "Ted", "Jack", "Mike", "Ron", "Heidi", "Luca", "Isabella", "Bill", "Donna", "Peter" };
 
-        //11.1 Create a foreach loop that evaluates each item in the list, 
-        Console.WriteLine("Here are a lidt of name:");
+        //11.1 Create a foreach loop that evaluates each item in the list, and displays a message showing the string 
+        //and whether or not it has already appeared in the list
+        Console.WriteLine("Here is a list of names:");
         foreach (string name in names)
         {
-            for (int i = 1; i < names.Count; i++)
+            List<int> count = new List<int>();
+            for (int i = 0; i < names.Count; i++)
             {
                 if (name == names[i])
                 {
-                    Console.WriteLine("Hi! my name is " + name + " and I have already intruduced myself.");
+                    count.Add(i);
                 }
             }
+            if (count.Count >= 2)
+            {
+                Console.WriteLine(name + "  (This name appears nore than once on this list.)");
+            }
+            else
+            {
+                Console.WriteLine(name);
+            }
         }
-        //11.2 and displays a message showing the string DONE 
-
-        //11.3 and whether or not it has already appeared in the list.
-
         Console.ReadLine();
     }
 }
