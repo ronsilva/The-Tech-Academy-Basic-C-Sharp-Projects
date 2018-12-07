@@ -23,9 +23,5 @@ namespace CreateAClass_Project
             int Result = Dividend / 7;
             return Result;
         }
-
-
-
-        
     }
 }
