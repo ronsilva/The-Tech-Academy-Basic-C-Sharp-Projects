@@ -18,6 +18,7 @@ namespace VoidMethodClass_Project
             instance1.DoACoupleOfThings(5, 60);
             //4. Call the method in the class, specifying the parameters by name. DONE
             instance1.DoACoupleOfThings(num1: 5, num2: 60);
+            Console.ReadLine();
         }
     }
 }
