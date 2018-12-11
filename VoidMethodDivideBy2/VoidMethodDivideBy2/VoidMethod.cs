@@ -11,6 +11,7 @@ namespace VoidMethodDivideBy2
         public void DivideAnInt(int num1)
         {
             int result = num1 / 2;
+            Console.WriteLine(result);
         }
     }
 }

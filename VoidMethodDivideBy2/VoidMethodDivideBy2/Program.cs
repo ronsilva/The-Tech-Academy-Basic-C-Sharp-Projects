@@ -17,15 +17,15 @@ namespace VoidMethodDivideBy2
             //2. In the Main() method, instantiate that class.
             VoidMethod vd = new VoidMethod();
             //3.0 Have the user enter a number.
-            Console.WriteLine("PLease enter a numer:");
+            Console.WriteLine("Please enter a numer:");
             int num1 = Convert.ToInt32(Console.ReadLine());
             //3.1 Call the method on that number.
-            int result = vd.DivideAnInt(num1);
-            //3.2 Display the output to the screen. It should be the entered number, divided by two.
-            Console.WriteLine(result);
+            vd.DivideAnInt(num1);
+            //3.2 Display the output to the screen. It should be the entered number, divided by two. DONE
             //4. Create a method with output parameters. DONE
             //5. Overload a method. DONE
             //6. Declare a class to be static. DONE
+            Console.ReadLine();
         }
     }
 }
